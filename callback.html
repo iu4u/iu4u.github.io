@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>iu4u — Connected</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font:17px/1.6 -apple-system,Helvetica,sans-serif;max-width:680px;margin:48px auto;padding:0 20px;color:#222}.ok{color:#0a7;font-weight:700}</style></head><body>
+<h1>Account connected</h1>
+<p id="st" class="ok">Checking authorisation…</p>
+<p>The authorisation code has been received by iu4u Content Pipeline. Your account is now linked to the posting queue; videos will be uploaded as drafts for your review.</p>
+<p><a href="index.html">← back to iu4u</a></p>
+<script>
+var q=new URLSearchParams(location.search);
+var code=q.get('code');
+document.getElementById('st').textContent=code?'Authorisation received — account connected.':'No authorisation code found in the URL.';
+if(code){/* display-only demo page; the pipeline exchanges the code server-side */}
+</script>
+</body></html>

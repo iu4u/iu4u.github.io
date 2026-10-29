@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>iu4u — Connect TikTok</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font:17px/1.6 -apple-system,Helvetica,sans-serif;max-width:680px;margin:48px auto;padding:0 20px;color:#222}button{background:#0a7;color:#fff;border:0;border-radius:8px;padding:14px 22px;font-size:17px;cursor:pointer}</style></head><body>
+<h1>Connect your TikTok account</h1>
+<p>iu4u Content Pipeline uses TikTok Login Kit to identify your account, then uploads your approved videos as drafts for review.</p>
+<button onclick="document.getElementById('go').classList.remove('hide')">Connect with TikTok</button>
+<p id="go" class="hide" style="word-break:break-all"><b>Authorise link (paste your app's client key into the URL after setup):</b><br>https://www.tiktok.com/v2/auth/authorize/?client_key=CLIENT_KEY&scope=user.info.basic,video.upload&response_type=code&redirect_uri=https://iu4u.github.io/callback</p>
+<p><a href="index.html">← back</a></p>
+<script>document.getElementById('go').classList.add('hide');
+// wire the button properly once client_key is known (set below)
+var CK='CLIENT_KEY';
+document.querySelector('button').onclick=function(){location.href='https://www.tiktok.com/v2/auth/authorize/?client_key='+CK+'&scope=user.info.basic,video.upload&response_type=code&redirect_uri='+encodeURIComponent('https://iu4u.github.io/callback');};
+</script>
+</body></html>
